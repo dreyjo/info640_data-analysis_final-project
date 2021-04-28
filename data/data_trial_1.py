@@ -44,6 +44,7 @@ fat19 = "https://dl.acm.org/doi/proceedings/10.1145/3287560"
 #For scraping individual abstracts in paper page
 # abs=soup.find(class_='abstractSection abstractInFull').get_text()
 # #abs=soup.find_all()
+#***************************
 
 
 
@@ -101,7 +102,7 @@ def get_abstracts(list):
     return a
 
 ab=get_abstracts(doi)
-#print(a)
+#print(ab)
 
 
 #Step5: Writing function to get writers
@@ -120,28 +121,9 @@ ab=get_abstracts(doi)
 # #print(w)
 
 #Step6: Writing function to get references
-rf = []
+#rf = []
 
 #Step6: Create dataframe using pandas and save as csv
 data = list(zip(tl,ab))
 df = pd.DataFrame(data, columns=['title', 'abstract'])
-df.to_csv("data_creation.csv")
-
-
-
-
-
-
-
-#print(url)
-
-#append them to https://dl.acm.org/ to get the url
-#store them as urls
-
-
-    #get authors:
-    #auth=soup.find_all('span', class_="loa__author-name")
-    # for a in auth:
-    #     #print([a.get_text])
-    #     print([soup.find('span').get_text])
-    # #print(auth)
+df.to_csv("csv/data_creation.csv")
