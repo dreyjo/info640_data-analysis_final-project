@@ -11,16 +11,17 @@ from re import search
 
 import time
 
-
-
-f19 = 'fat19_proceeds.txt'
+#f19 = 'fat19_proceeds.txt'
 #f20 = 'fat20_proceeds.txt'
+f21 = 'facct21_proceeds.txt'
 
 #r19 = requests.get(f19)
 #r20 = requests.get(f20)
+#r21 = requests.get(f21)
 
-soup19 = BeautifulSoup(open(f19).read(),'html.parser')
-#soup20 = BeautifulSoup(open(f20).read(),'html.parser')
+#soup19 = BeautifulSoup(open(f19).read(),'html.parser')
+# soup20 = BeautifulSoup(open(f20).read(),'html.parser')
+soup21 = BeautifulSoup(open(f21).read(),'html.parser')
 
 #FAT 19 Proceedings - Get Data:
 
@@ -28,7 +29,7 @@ soup19 = BeautifulSoup(open(f19).read(),'html.parser')
 doi=[]
 #making a variable to hold the paper url as a substring
 substring = 'https://doi.org'
-links = soup19.find_all('a', href=True)
+links = soup21.find_all('a', href=True)
 for a in links:
     if re.search(substring,a['href']):
         #append acm url to DOIs, now we have URLs for every paper in proceedings
@@ -47,9 +48,11 @@ def get_titles(list):
          #use bs to parse html
          soup = BeautifulSoup(r.text,'html.parser')
          #find the h1 tag which we know is how the paper title is tagged and get the tag text
-         ttl=soup.find('h1').get_text()
+         ttl=soup.find_all('h1', class_="citation__title")
+         for w in ttl:
+             l = w.get_text()
          #add the grabbed title to our empty list
-         t.append(ttl)
+         t.append(l)
          #delay 3 seconds and do it again.
          time.sleep(3)
      return t
@@ -64,8 +67,10 @@ def get_abstracts(list):
     for x in list:
         r=requests.get(x)
         soup = BeautifulSoup(r.text,'html.parser')
-        abs=soup.find('div', class_="abstractSection abstractInFull")
-        a.append(abs.text)
+        abs=soup.find_all('div', class_="abstractSection abstractInFull")
+        for w in abs:
+            l = w.get_text()
+        a.append(l)
         time.sleep(3)
     return a
 
@@ -104,7 +109,8 @@ ab=get_abstracts(doi)
 #Step 6: Create Dataframe:
 data = list(zip(tl,ab))
 df = pd.DataFrame(data, columns=['title', 'abstract'])
-df['date_published'] = 'January 2019'
-df.to_csv("fat19_papers.csv")
+df['date_published'] = 'March 2021'
+df.to_csv("facct20_papers.csv")
+
 
 #FAT 20 Proceedings - Get Data:

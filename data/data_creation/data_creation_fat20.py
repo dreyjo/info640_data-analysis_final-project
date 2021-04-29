@@ -45,9 +45,11 @@ def get_titles(list):
          #use bs to parse html
          soup = BeautifulSoup(r.text,'html.parser')
          #find the h1 tag which we know is how the paper title is tagged and get the tag text
-         ttl=soup.find('h1').get_text()
+         ttl=soup.find_all('h1', class_="citation__title")
+         for w in ttl:
+             l = w.get_text()
          #add the grabbed title to our empty list
-         t.append(ttl)
+         t.append(l)
          #delay 3 seconds and do it again.
          time.sleep(3)
      return t
@@ -62,8 +64,10 @@ def get_abstracts(list):
     for x in list:
         r=requests.get(x)
         soup = BeautifulSoup(r.text,'html.parser')
-        abs=soup.find('div', class_="abstractSection abstractInFull")
-        a.append(abs.text)
+        abs=soup.find_all('div', class_="abstractSection abstractInFull")
+        for w in abs:
+            l = w.get_text()
+        a.append(l)
         time.sleep(3)
     return a
 
@@ -104,5 +108,6 @@ data = list(zip(tl,ab))
 df = pd.DataFrame(data, columns=['title', 'abstract'])
 df['date_published'] = 'January 2020'
 df.to_csv("fat20_papers.csv")
+
 
 #FAT 20 Proceedings - Get Data:
