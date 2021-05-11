@@ -1,0 +1,91 @@
+"","title","paperID","t.V1","t.V2","t.V3"
+"1","Model Reconstruction from Model Explanations",0,0.488785197291886,0.510605639407086,0.00060916330102807
+"2","Actionable Recourse in Linear Classification",1,0.000386062116439858,0.683677833042783,0.315936104840777
+"3","Efficient Search for Diverse Coherent Explanations",2,0.000712032267538682,0.265270317473697,0.734017650258764
+"4","On Human Predictions with Explanations and Predictions of Machine Learning Models: A Case Study on Deception Detection",3,0.000313091941483985,0.999373816117279,0.000313091941236679
+"5","Problem Formulation and Fairness",4,0.000313091941316089,0.000313091941442291,0.999373816117242
+"6","50 Years of Test (Un)fairness: Lessons for Machine Learning",5,0.99907366549335,0.000463167253510497,0.000463167253139206
+"7","Fairness and Abstraction in Sociotechnical Systems",6,0.707048755264424,0.000413603766376189,0.292537640969199
+"8","Clear Sanctions, Vague Rewards: How China's Social Credit System Currently Defines ""Good"" and ""Bad"" Behavior",7,0.000298964986680711,0.000298964987137474,0.999402070026182
+"9","A Taxonomy of Ethical Tensions in Inferring Mental Health States from Social Media",8,0.767795618286165,0.231830759254363,0.000373622459471995
+"10","Dissecting Racial Bias in an Algorithm that Guides Health Decisions for 70 Million People",9,0.000106344896343303,0.999787310207338,0.000106344896318253
+"11","Disparate Interactions: An Algorithm-in-the-Loop Analysis of Fairness in Risk Assessments",10,0.00034068946576035,0.999318621068495,0.000340689465744874
+"12","An Empirical Study of Rich Subgroup Fairness for Machine Learning",11,0.632246094520584,0.367444984228454,0.000308921250961395
+"13","The Profiling Potential of Computer Vision and the Challenge of Computational Empiricism",12,0.81323616137242,0.186314143482451,0.000449695145128563
+"14","Bias in Bios: A Case Study of Semantic Representation Bias in a High-Stakes Setting",13,0.000661273715284613,0.998677452568985,0.000661273715729849
+"15","Equality of Voice: Towards Fair Representation in Crowdsourced Top-K Recommendations",14,0.999328486178948,0.000335756910371234,0.000335756910680277
+"16","Analyzing Biases in Perception of Truth in News Stories and Their Implications for Fact Checking",15,0.999760390170995,0.000119804914510822,0.000119804914494662
+"17","On Microtargeting Socially Divisive Ads: A Case Study of Russia-Linked Ad Campaigns on Facebook",16,0.999323589591908,0.000338205203958226,0.000338205204134045
+"18","SIREN: A Simulation Framework for Understanding the Effects of Recommender Systems in Online News Environments",17,0.000364806390730948,0.00036480639032322,0.999270387218946
+"19","Controlling Polarization in Personalization: An Algorithmic Framework",18,0.87481611170275,0.000409948057582476,0.124773940239668
+"20","Fair Algorithms for Learning in Allocation Problems",19,0.000243932791187313,0.999512134417602,0.00024393279121026
+"21","Fair Allocation through Competitive Equilibrium from Generic Incomes",20,0.000274219030655777,0.000274219030823189,0.999451561938521
+"22","A Moral Framework for Understanding Fair ML through Economic Models of Equality of Opportunity",21,0.999024982349143,0.000487508825626498,0.000487508825230579
+"23","Beyond Open vs. Closed: Balancing Individual Privacy and Public Accountability in Data Sharing",22,0.000333343808660057,0.000333343808601184,0.999333312382739
+"24","Who's the Guinea Pig?: Investigating Online A/B/n Tests in-the-Wild",23,0.497963881617486,0.000625596276364897,0.501410522106149
+"25","Fairness-Aware Programming",24,0.76587706657324,0.165478754934324,0.0686441784924359
+"26","Model Cards for Model Reporting",25,0.769329226689563,0.230407452102668,0.00026332120776879
+"27","The Social Cost of Strategic Classification",26,0.000617270437447218,0.336058861998284,0.663323867564269
+"28","Downstream Effects of Affirmative Action",27,0.000373622458476466,0.9992527550825,0.000373622459023615
+"29","Access to Population-Level Signaling as a Source of Inequality",28,0.00037063680246904,0.000370636802786877,0.999258726394744
+"30","The Disparate Effects of Strategic Manipulation",29,0.000297050252574703,0.763587722623676,0.236115227123749
+"31","What to account for when accounting for algorithms: a systematic literature review on algorithmic accountability",0,0.848781980709763,0.000295159888301731,0.150922859401935
+"32","Algorithmic realism: expanding the boundaries of algorithmic thought",1,0.000373622458827541,0.000373622458725322,0.999252755082447
+"33","Algorithmic accountability in public administration: the GDPR paradox",2,0.000266345470087143,0.000266345470072674,0.99946730905984
+"34","Closing the AI accountability gap: defining an end-to-end framework for internal algorithmic auditing",3,0.999054787510974,0.000472606244528803,0.000472606244496771
+"35","Toward situated interventions for algorithmic equity: lessons from the field",4,0.00037974043982372,0.000379740439630248,0.999240519120546
+"36","Explainability fact sheets: a framework for systematic assessment of explainable approaches",5,0.9808219516015,0.0188216516158804,0.000356396782619209
+"37","Multi-layered explanations from algorithmic impact assessments in the GDPR",6,0.000544769070222621,0.78153069993099,0.217924530998787
+"38","The hidden assumptions behind counterfactual explanations and principal reasons",7,0.000297050252987631,0.975230563836405,0.0244723859106077
+"39","Why does my model fail?: contrastive local explanations for retail forecasting",8,0.166859939335214,0.832789058147343,0.000351002517443152
+"40","""The human body is a black box"": supporting clinical decision-making with deep learning",9,0.999482177137075,0.000258911431429016,0.000258911431495967
+"41","Assessing algorithmic fairness with unobserved protected class using data combination",10,0.000328620189147698,0.99934275962172,0.000328620189131819
+"42","FlipTest: fairness testing via optimal transport",11,0.457417366477818,0.542114794377728,0.000467839144453631
+"43","Implications of AI (un-)fairness in higher education admissions: the effects of perceived AI (un-)fairness on exit, voice and organizational reputation",12,0.000258911431635665,0.000258911431595338,0.999482177136769
+"44","Auditing radicalization pathways on YouTube",13,0.999221394907098,0.000389302546174034,0.000389302546727879
+"45","Case study: predictive fairness to reduce misdemeanor recidivism through social service interventions",14,0.000286057833016002,0.999427884333705,0.000286057833278665
+"46","The concept of fairness in the GDPR: a linguistic and contextual interpretation",15,0.999603815310077,0.000198092344884944,0.000198092345037657
+"47","The concept of fairness in the GDPR: a linguistic and contextual interpretation",16,0.999603815310077,0.000198092344884944,0.000198092345037657
+"48","POTs: protective optimization technologies",17,0.000345769108311247,0.000345769108558519,0.99930846178313
+"49","Fair decision making using privacy-protected data",18,0.00044969514403169,0.999100609711479,0.00044969514448931
+"50","Fairness warnings and fair-MAML: learning fairly with minimal data",19,0.00047747149416632,0.999045057011803,0.000477471494030159
+"51","Fairness warnings and fair-MAML: learning fairly with minimal data",20,0.00047747149416632,0.999045057011803,0.000477471494030159
+"52","Fairness warnings and fair-MAML: learning fairly with minimal data",21,0.00047747149416632,0.999045057011803,0.000477471494030159
+"53","Whose side are ethics codes on?: power, responsibility and the social good",22,0.000389302547570996,0.000389302546576002,0.999221394905853
+"54","Algorithmic targeting of social policies: fairness, accuracy, and distributed governance",23,0.163614752719844,0.0554355901401955,0.780949657139961
+"55","Roles for computing in social change",24,0.00036195943501721,0.000361959435032907,0.99927608112995
+"56","Roles for computing in social change",25,0.00036195943501721,0.000361959435032907,0.99927608112995
+"57","The relationship between trust in AI and trustworthy machine learning technologies",26,0.999221394905026,0.000389302547160118,0.000389302547813605
+"58","The philosophical basis of algorithmic recourse",27,0.000690821621062792,0.000690821621804986,0.998618356757132
+"59","The philosophical basis of algorithmic recourse",28,0.000690821621062792,0.000690821621804986,0.998618356757132
+"60","Effect of confidence and explanation on accuracy and trust calibration in AI-assisted decision making",29,0.000297050252395604,0.999405899494952,0.000297050252652651
+"61","Leave-one-out Unfairness",0,0.0004585877483259,0.58123324906417,0.418308163187504
+"62","Fairness, Welfare, and Equity in Personalized Pricing",1,0.000282572279980432,0.000282572280574004,0.999434855439446
+"63","Re-imagining Algorithmic Fairness in India and Beyond",2,0.998765459123677,0.000617270438441437,0.000617270437881563
+"64","Narratives and Counternarratives on Data Sharing in Africa",3,0.0310243754154517,0.000308921251546157,0.968666703333002
+"65","This Whole Thing Smacks of Gender: Algorithmic Exclusion in Bioimpedance-based Body Composition Analysis",4,0.971591560796147,0.02800908054961,0.000399358654243359
+"66","Algorithmic Recourse: from Counterfactual Explanations to Interventions",5,0.000487508824629059,0.71997261608369,0.279539875091681
+"67","A Semiotics-based epistemic tool to reason about ethical issues in digital technology design and development",6,0.999194345717166,0.000402827141142045,0.000402827141691748
+"68","Measurement and Fairness",7,0.999318621068442,0.000340689465762078,0.000340689465795691
+"69","Fairness in Risk Assessment Instruments: Post-Processing to Achieve Counterfactual Equalized Odds",8,0.000319563495305673,0.99936087300892,0.000319563495774112
+"70","High Dimensional Model Explanations: An Axiomatic Approach",9,0.000441140858489561,0.99911771828314,0.000441140858369971
+"71","An Agent-based Model to Evaluate Interventions on Online Dating Platforms to Decrease Racial Homogamy",10,0.000345769108075823,0.000345769108248574,0.999308461783676
+"72","Designing Accountable Systems",11,0.000532265641575898,0.000532265641251782,0.998935468717172
+"73","Socially Fair k-Means Clustering",12,0.000571625111866573,0.998856749775911,0.000571625112222795
+"74","Towards Cross-Lingual Generalization of Translation Gender Bias",13,0.372314583851933,0.627235721003601,0.000449695144465748
+"75","A Pilot Study in Surveying Clinical Judgments to Evaluate Radiology Report Generation",14,0.998947546568974,0.000526226715672631,0.00052622671535304
+"76","Fairness Through Robustness: Investigating Robustness Disparity in Deep Learning",15,0.000333343808727912,0.999333312382586,0.000333343808686339
+"77","Operationalizing Framing to Support Multiperspective Recommendations of Opinion Pieces",16,0.000370636802857841,0.000370636802183291,0.999258726394959
+"78","Bridging Machine Learning and Mechanism Design towards Algorithmic Fairness",17,0.171186396012449,0.000386062117433827,0.828427541870117
+"79","Fair Clustering via Equitable Group Representations",18,0.000364806390809958,0.000364806391243435,0.999270387217947
+"80","You Can't Sit With Us: Exclusionary Pedagogy in AI Ethics Education",19,0.000413603765645,0.000413603765207172,0.999172792469148
+"81","Fair Classification with Group-Dependent Label Noise",20,0.000441140858677398,0.969774188368876,0.0297846707724467
+"82","Censorship of Online Encyclopedias: Implications for NLP Models",21,0.000463167254030662,0.999073665492497,0.000463167253472159
+"83","Impossible Explanations?: Beyond explainable AI in the GDPR from a COVID-19 use case scenario",22,0.000217609826765404,0.9995647803464,0.000217609826834756
+"84","Towards Accountability for Machine Learning Datasets: Practices from Software Engineering and Infrastructure",23,0.999157771331467,0.000421114334435104,0.000421114334098023
+"85","Fairness, Equality, and Power in Algorithmic Decision-Making",24,0.0750958926054426,0.924352863702989,0.000551243691568092
+"86","One Label, One Billion Faces: Usage and Consistency of Racial Categories in Computer Vision",25,0.999444999285138,0.000277500357587032,0.000277500357275197
+"87","Reviewable Automated Decision-Making: A Framework for Accountable Algorithmic Systems",26,0.000514550840931604,0.21545523619526,0.784030212963809
+"88","On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜",27,0.973523265679399,0.026008895177102,0.000467839143498685
+"89","Formalizing Trust in Artificial Intelligence: Prerequisites, Causes and Goals of Human Trust in AI",28,0.000449695144786697,0.000449695144961539,0.999100609710252
+"90","TILT: A GDPR-Aligned Transparency Information Language and Toolkit for Practical Privacy Engineering",29,0.000306877298322562,0.000306877298076519,0.999386245403601

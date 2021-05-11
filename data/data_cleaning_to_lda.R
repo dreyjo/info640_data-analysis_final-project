@@ -89,8 +89,7 @@ print(papers_data[[10]][1])
 
 #print(stemmed_data[[10]][1])
 
-#lem - lemmatize words, make a dictionary of lemmed words 
-#-----------------------
+
 
 #Creating Term-Document Matrix:
 #-------------------------
@@ -99,9 +98,11 @@ papers_dtm <- DocumentTermMatrix(papers_data)
 print(papers_dtm[[1]])
 #---following stackoverflow code which includes stemming and stem completion:
 #don't understand this code and need to ask Prof McSweeny about it
-papers_tdm <- TermDocumentMatrix(papers_data, control = list(stemming = TRUE)) 
+#papers_tdm <- TermDocumentMatrix(papers_data, control = list(stemming = TRUE)) 
 #use an assigned variable so you can refer to completed
-cbind(stems = rownames(papers_tdm), completed = stemCompletion(rownames(papers_tdm), papers_data))
+#cbind(stems = rownames(papers_tdm), completed = stemCompletion(rownames(papers_tdm), papers_data))
+
+
 
 #checking data type and class type
 typeof(papers_data)
@@ -211,22 +212,31 @@ tail(sort(freq_2),n=10)
 #tf-idf doesn't seem to change anything and causes issues
 #With advice from Prof.McSweeney:
 
-#-Next way to see if I get different reseults would be in incoporating stemmed results
+#-Next way to see if I get different results would be in incorporating stemmed results
 #--set the table of stem and stemcompleted to a variable so you can reference a column if need be
 #so trial 3 is with a STEMMED papers_dtm not weighted with tf-idf. 
 
-#analysis could begin with understadning:
+#analysis could begin with understanding:
 #- what terms appear in some topics and which don't? If data appears in 2/3 topics why might that be?
 
 #- if terms appear frequently across topics why might that be? Could those terms be used in different ways within those topics?
 #--one way to analyze this might be reconnecting topics to paper sources/ids:
 #---specifically pulling out which papers are great representations of each topic, looking at these papers to see what they have in common in-topic? 
 #---and seeing if these words are being deployed in the same way
+
+#stemming again:
+#-----------------------
+stem_dtm <- DocumentTermMatrix(papers_data, control = list(stemming = TRUE)) 
+stem_terms <-cbind(stems = rownames(stem_dtm), completed = stemCompletion(rownames(stem_dtm), papers_data))
+write.csv(stem_terms, "/Users/aster/Desktop/sp21_da/da_proj/info640_da_final/data/csv/stem_completed_terms.csv")
+stem_terms
+
 k3 <- 3
-papers_lda_3 <- LDA(papers_dtm, k = k3, control = list(seed=1234)) 
+papers_lda_3 <- LDA(stem_dtm, k = k3, control = list(seed=1234)) 
 papers_lda_3 
 papers_lda_3_terms <- terms(papers_lda_3,5)
 
+#plot LDA 3 where k=3
 papers_lda_3_topics <-as.matrix(papers_lda_3_terms) 
 head(papers_lda_3_topics) 
 write.csv(papers_lda_3_topics,"/Users/aster/Desktop/sp21_da/da_proj/info640_da_final/data/csv/papers_lda_trial3.csv")
@@ -242,7 +252,97 @@ top_terms_lda_3 %>%
   mutate(term = reorder(term, beta)) %>% 
   ggplot(aes(term, beta, fill=factor(topic))) + geom_col(show.legend=FALSE) + facet_wrap(~ topic, scales = "free")+ coord_flip()
 
+#----------------------------
 
+k4 <- 10
+papers_lda_4 <- LDA(stem_dtm, k = k4, control = list(seed=1234)) 
+papers_lda_4 
+papers_lda_4_terms <- terms(papers_lda_4,10)
+
+#plot lda 4 where k=10
+papers_lda_4_topics <-as.matrix(papers_lda_4_terms) 
+head(papers_lda_4_topics) 
+write.csv(papers_lda_4_topics,"/Users/aster/Desktop/sp21_da/da_proj/info640_da_final/data/csv/papers_lda_trial4.csv")
+
+tidy_papers_lda_4 <- tidy(papers_lda_4)
+top_terms_lda_4 <- tidy_papers_lda_4 %>% 
+  group_by(topic) %>% 
+  top_n(10, beta) %>% 
+  ungroup() %>% 
+  arrange(topic, -beta)
+
+top_terms_lda_4 %>% 
+  mutate(term = reorder(term, beta)) %>% 
+  ggplot(aes(term, beta, fill=factor(topic))) + geom_col(show.legend=FALSE) + facet_wrap(~ topic, scales = "free")+ coord_flip()
+
+#testing looking at topicProbabilities
+topicProbabilities <- as.data.frame(papers_lda_3@gamma)
+topicProbabilities
 #---LDAviz
+install.packages("LDAvis")
+library(LDAvis)
+help(createJSON, package = "LDAvis")
 
+
+
+#------Seeing Example Paper of topics---------------
+#probabilities where k=3
+topicProbabilities <- as.data.frame(papers_lda_3@gamma)
+topicProbabilities
+
+papers_meta <-cbind(papers = papers["title"], id = papers["paperID"])
+papers_meta
+
+term_title_probabilities <- cbind(papers_meta,t = topicProbabilities)
+ttp <- term_title_probabilities
+#writing dataframe with titles and topic probabilities where k=3 to csv I can work on python
+write.csv(term_title_probabilities, "/Users/aster/Desktop/sp21_da/da_proj/info640_da_final/data/csv/topic_paper_probabilities_k3.csv")
+
+#probabilities where K=10
+p10 <- as.data.frame(papers_lda_4@gamma)
+p10 
+
+ttp10 <- cbind(papers_meta, topic = p10)
+
+  
+write.csv(ttp10, "/Users/aster/Desktop/sp21_da/da_proj/info640_da_final/data/csv/topic_paper_probabilities_k4.csv")
+#probabilities where K 
+  
+#--------------Topic Model where k=20  
+k5 <- 20
+papers_lda_5 <- LDA(stem_dtm, k = k5, control = list(seed=1234)) 
+papers_lda_5 
+papers_lda_terms_k20 <- terms(papers_lda_5,5)
+write.csv(papers_lda_5, "/Users/aster/Desktop/sp21_da/da_proj/info640_da_final/data/csv/papers_lda_trial5.csv")
+
+
+#--------------Visualizing Topics:
+#installing LDAvis
+install.packages("LDAvis")
+library(LDAvis)
+
+help(createJSON, package = "LDAvis")
+#Where K = 3
+#Where K = 10
+#Where K = 20
+#-----Topic Coherence:
+num_k = c(3,6,10,20,40,60)
+
+
+
+#---making an LDA model where k=20
+
+
+#tidy_papers_lda_5 <- tidy(papers_lda_5)
+#top_terms_lda_5 <- tidy_papers_lda_5 %>% 
+  #group_by(topic) %>% 
+  #top_n(5, beta) %>% 
+  #ungroup() %>% 
+  #arrange(topic, -beta)
+
+#top_terms_lda_5 %>% 
+ # mutate(term = reorder(term, beta)) %>% 
+  #ggplot(aes(term, beta, fill=factor(topic))) + geom_col(show.legend=FALSE) + facet_wrap(~ topic, scales = "free")+ coord_flip()
+
+#---plot coherence where k=20
 
